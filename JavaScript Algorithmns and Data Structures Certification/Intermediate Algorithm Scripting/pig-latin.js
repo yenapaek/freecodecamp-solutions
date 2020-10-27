@@ -1,7 +1,7 @@
 /* Intermediate Algorithm Scripting: Pig Latin */
 
 /*
-Problem: YTranslate the provided string to Pig Latin.
+Problem: Translate the provided string to Pig Latin.
 Input strings are guaranteed to be English words in all lowercase.
 
 Note - If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
