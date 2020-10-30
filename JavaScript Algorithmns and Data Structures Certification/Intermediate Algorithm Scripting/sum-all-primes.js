@@ -40,3 +40,69 @@ function sumPrimes(num) {
     // sum of all prime numbers
     return primeArr.reduce((a, b) => a+b);
 }
+
+function smallestCommons(arr) {
+    // make an array that adds all the numbers between the parameters
+    var tempArr = [];
+    var startNum, endNum;
+    var index = 0;
+  
+    if (arr[0] < arr[1]){
+        startNum = arr[0];
+        endNum = arr[1];
+    }
+    else {
+      startNum = arr[1];
+      endNum = arr[0];
+    }
+    console.log(startNum);
+  
+    // populate tempArr with sequential numbers
+    for (let i = startNum; i <= endNum; i++){
+      tempArr[index] = i;
+      index++;
+    }
+    console.log(tempArr);
+  
+    function findPrimeFactors(x) {
+      var factorArr = [];
+      for (let a = x; a > 0; a--){
+        if (x%a === 0){
+          factorArr.unshift();
+        }
+      }
+      return factorArr;
+    }
+  
+    // check for smallest common multiple
+    return arr;
+  }
+
+  function smallestCommons(arr) {
+    var range = [];
+  
+    // populate tempArr with sequential numbers
+      for (let i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--){
+        range.push(i);
+      }
+  
+    // function to find greatest common denominator
+    function gcd(a, b) 
+    { 
+      if (b === 0) { 
+          return a;
+      }
+      return gcd(b, a % b); 
+    } 
+  
+    // can use reduce() in place of this block
+    var lcm = range[0];
+  
+    for (let a = 1; a < range.length; a++) {
+      var GCD = gcd(lcm, range[a]);
+      lcm = (lcm * range[a]) / GCD;
+    }
+    return lcm;
+  }
+  
+  console.log(smallestCommons([5,1]));
